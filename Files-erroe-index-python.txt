@@ -1,0 +1,62 @@
+AWS_Lambda_Python_Code.py
+===========================
+
+def lambda_handler(event, context):
+    print("In lambda handler")
+    
+    resp = {
+        "statusCode": 200,
+        "headers": {
+            "Access-Control-Allow-Origin": "*",
+        },
+        "body": "Keshav Kummari"
+    }
+    
+    return resp
+
+=====================================================
+aws/error.html
+===========
+
+<html>
+   <head></head>
+   <body>
+      <h1>There has been an error!</h1>
+   </body>
+</html>
+
+======================================================
+
+aws/index.html
+===========
+
+<html>
+	<head>
+		<script>
+			function myFunction() {
+				var xhttp = new XMLHttpRequest();
+				xhttp.onreadystatechange = function() {
+					if (this.readyState == 4 && this.status == 200) {
+					document.getElementById("my-demo").innerHTML = this.responseText;
+					}
+				};
+				xhttp.open("GET", "https://kmhp9oau91.execute-api.ap-south-1.amazonaws.com/prod/MyTestLambdaFunction", true);
+				xhttp.send();
+			}
+		</script>
+	</head>
+<body>
+	<div align="center">
+		<br>
+		<br>
+		<br>
+		<br>
+		<h1>Hello <span id="my-demo">Online Ucator</span></h1>
+		<button onclick="myFunction()">Click me</button>
+		<br>
+		<img src="https://s3.ap-south-1.amazonaws.com/devopskeshav/ckk.jpg">
+	</div>
+
+	</body>
+</html>
+=====================================================
